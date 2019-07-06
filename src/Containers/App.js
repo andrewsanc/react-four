@@ -18,13 +18,13 @@ class App extends Component {
     this.startGame();
   }
 
-  renderRows = () => {
+  renderRows = () => { // Renders gameboard rows
     return this.state.gameBoard.map((row, i) => {
       return <Row row={row} key={i} move={this.move} />;
     });
   };
 
-  startGame = () => {
+  startGame = () => { // Initalizing game state
     let newBoard = [];
     for (let r = 0; r < 6; r++) {
       let row = [0, 0, 0, 0, 0, 0, 0];
@@ -130,7 +130,7 @@ class App extends Component {
     return 'draw';
   }
 
-  diagonalLeftCheck = (currentBoard) => {
+  diagonalLeftCheck = (currentBoard) => { // Check for diagonal win to the left
     for (let row=3; row<6; row++) {
       for (let col=3; col<7; col++) {
         if (currentBoard[row][col]) {
@@ -144,7 +144,7 @@ class App extends Component {
     }
   }
 
-  diagonalRightCheck = (currentBoard) => {
+  diagonalRightCheck = (currentBoard) => {  // Check for diagonal win to the right
     for (let row=3; row<6; row++) {
       for (let col=0; col<4; col++) {
         if (currentBoard[row][col]) {
@@ -158,7 +158,7 @@ class App extends Component {
     }
   }
 
-  togglePlayer = () => {
+  togglePlayer = () => {  // Toggle player state
     const current = this.state.currentPlayer;
     if (current === 'red') {
       this.setState(() => {
