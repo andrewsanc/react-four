@@ -195,7 +195,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <button className="waves-effect waves-light btn-large green col s2" onClick={this.startGame} >
-              Start Game!
+              {this.state.gameOver ? 'Start Game!' : 'End Game'}
             </button>
             <h5 className="col s4 left">
               Turn: {this.state.currentPlayer === 'red' ? 'Player 1' : 'Player 2'}
